@@ -35,7 +35,7 @@ class TotalCasePieChartHomeMobileTablet extends BaseStatelessWidget {
             SizedBox(height: height(30)),
             Text('Covid Stats', style: Theme.of(context).textTheme.headline6,),
             SizedBox(height: height(5)),
-            TotalCasePieChart(totalCase: totalCase),
+            TotalCasePieChart(totalCase: totalCase, pieChartWidth: width(65),),
           ],
         ),
       ),

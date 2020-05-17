@@ -2,8 +2,6 @@ import 'package:covid_in/core/presentation/base_screen/base_stateful_widget.dart
 import 'package:covid_in/features/covid_info_india/presentation/bloc/district_case_zone_bloc.dart';
 import 'package:covid_in/features/covid_info_india/presentation/responsive/app_bar/app_bar.dart';
 import 'package:covid_in/features/covid_info_india/presentation/responsive/district_zones/district_zone.dart';
-import 'package:covid_in/features/covid_info_india/presentation/responsive/district_zones/district_zone_mobile.dart';
-import 'package:covid_in/features/covid_info_india/presentation/widgets/district_zone_list_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

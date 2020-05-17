@@ -54,7 +54,8 @@ class StopCovidWidget extends BaseStatelessWidget {
 
 class TotalCasePieChart extends BaseStatelessWidget {
   final TotalCase totalCase;
-  TotalCasePieChart({Key key, @required this.totalCase }) : super(key: key);
+  final double pieChartWidth;
+  TotalCasePieChart({Key key, @required this.totalCase, @required this.pieChartWidth }) : super(key: key);
 
   @override
   Widget setView(BuildContext context) {
@@ -68,14 +69,14 @@ class TotalCasePieChart extends BaseStatelessWidget {
     final pieSectionData = [
       PieChartSectionData(title: '${deathPercent.toStringAsPrecision(3)}%', 
       value: deathPercent,
-      //radius: width(80), 
+      radius: pieChartWidth * 1.05,
       color: Theme.of(context).accentColor, showTitle: true, titleStyle: Theme.of(context).textTheme.subtitle1),
       PieChartSectionData(title: '${recoveredPercent.toStringAsPrecision(3)}%',
        value: recoveredPercent,
-       //radius: width(70),
+       radius: pieChartWidth * .9,
       color: Theme.of(context).backgroundColor, showTitle: true, titleStyle: Theme.of(context).textTheme.subtitle1),
       PieChartSectionData(title: '${activePercent.toStringAsPrecision(3)}%', value: activePercent,
-      //radius: width(50),
+      radius: pieChartWidth * .6,
       color: Theme.of(context).primaryColor, showTitle: true, titleStyle: Theme.of(context).textTheme.subtitle1.apply(color: Colors.white))
       //PieChartSectionData(title: "Confirmed Cases", value: totalCase.data.summary.total.toDouble()),
     ];
@@ -89,32 +90,14 @@ class TotalCasePieChart extends BaseStatelessWidget {
               children: [
                 Flexible(
                   flex: 7,
-                  child: Container(
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Color(0xffe0e5ec),
-                      boxShadow: [
-                        BoxShadow(
-                          color: Colors.grey.shade400,
-                          offset: Offset(3, 3),
-                          blurRadius: 3,
-                        ),
-                        BoxShadow(
-                          color: Colors.white,
-                          offset: Offset(-3, -3),
-                          blurRadius: 3,
-                        )
-                      ]
-                    ),
-                    child: PieChart(
-                      PieChartData(
-                      sections: pieSectionData,
-                      centerSpaceRadius: width(65),
-                      pieTouchData: PieTouchData(enabled: true),
-                      sectionsSpace: 2,
-                      borderData: FlBorderData(border: Border())
-                    )),
-                  ),
+                  child: PieChart(
+                    PieChartData(
+                    sections: pieSectionData,
+                    centerSpaceRadius: pieChartWidth,
+                    pieTouchData: PieTouchData(enabled: true),
+                    sectionsSpace: 2,
+                    borderData: FlBorderData(border: Border())
+                  )),
                 ),
                 SizedBox(width: width(12),),
                 Flexible(

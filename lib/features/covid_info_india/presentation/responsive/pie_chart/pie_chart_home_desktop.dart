@@ -23,7 +23,7 @@ class TotalCasePieChartHomeDesktop extends BaseStatelessWidget {
             SizedBox(height: height(60)),
             Row(
               children: [
-                Flexible(flex: 4, child: TotalCasePieChart(totalCase: totalCase)),
+                Flexible(flex: 4, child: TotalCasePieChart(totalCase: totalCase, pieChartWidth: width(25),)),
                 SizedBox(width: width(10)),
                 Flexible(
                   flex: 2,

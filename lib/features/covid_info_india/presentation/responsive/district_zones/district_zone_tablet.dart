@@ -1,7 +1,5 @@
-import 'package:covid_in/core/presentation/base_screen/base_stateful_widget.dart';
 import 'package:covid_in/core/presentation/base_screen/base_stateless_widget.dart';
 import 'package:covid_in/features/covid_info_india/domain/entities/district_zone.dart';
-import 'package:covid_in/features/covid_info_india/presentation/responsive/app_bar/app_bar.dart';
 import 'package:covid_in/features/covid_info_india/presentation/widgets/district_zone_list_widgets.dart';
 import 'package:flutter/material.dart';
 

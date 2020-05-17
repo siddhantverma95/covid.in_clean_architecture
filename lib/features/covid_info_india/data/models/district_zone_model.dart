@@ -1,4 +1,3 @@
-import 'dart:convert';
 
 import 'package:covid_in/features/covid_info_india/domain/entities/district_zone.dart';
 import 'package:meta/meta.dart';
